@@ -58,12 +58,18 @@ public class Test2{
     public void sort_asc(int size){
          gen_arr(size);
         Collections.sort(list);
+        for (int i =0; i<list.size();i++){
+            System.out.println(list.get(i));
+        }
     }
 
     //Сортировка массива desc(по убыванию)
     public void sort_desc(int size){
         gen_arr(size);
         Collections.sort(list,Collections.reverseOrder());
+        for (int i =0; i<list.size();i++){
+            System.out.println(list.get(i));
+        }
     }
 
     //Заполне массива одинаковыми элементами
