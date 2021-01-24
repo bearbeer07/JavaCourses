@@ -87,7 +87,7 @@ public class Exercise_2 {
     //Заполне массива одинаковыми элементами
     public void add_all(/*int size,*/ int elem){
         for (int i = 0; i <list.size(); i++){
-            list.add(i,elem);
+            list.set(i,elem);
         }
     }
     //Вывод максимального-минимального значения
