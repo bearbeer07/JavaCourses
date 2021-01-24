@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Test2{
+public class Exercise_2 {
     /*
     +добавление элемента в массив (в конец и в определенную позицию)
     +функцию вывод количества элементов в массиве
@@ -15,7 +15,7 @@ public class Test2{
 
     ArrayList<Integer> list = new ArrayList<Integer>();
 
-    public Test2(ArrayList<Integer> list)
+    public Exercise_2(ArrayList<Integer> list)
     {
         this.list=list;
     }
