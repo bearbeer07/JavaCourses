@@ -4,14 +4,12 @@ package exercise_1;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
+
 
 public class Main {
 /*
 Необходимо:
-C
-тип авто имеющий наибольшую стоимость расходов
-тип авто имеющий наименьшую стоимость расходов
+
 реализовать функции которые в разрезе каждого типа авто выводят информацию о каждом авто (тип, номер, пробег, доп. параметр), с сортировкой по пробегу и доп параметру.
 */ //C(CODE_CAR)_гос номер-Пробег-(доп. параметр)
 
@@ -21,46 +19,34 @@ C
                 "C100_3-10", "C200_3-170-1100", "C300_3-150-29", "C400_3-100-28",
                 "C100_1-300", "C200_1-100-750", "C300_1-32-15"};
 
-        HashMap<Double, Double> cars_mileage = new HashMap<>();
         double rate_c100 = 0;
         double rate_c200 = 0;
         double rate_c300 = 0;
         double rate_c400 = 0;
         int cars_length = cars.length;
         for (int i = 0; i < cars_length; i++) {
-            for (String retval : cars[i].split(("_"))) {
-                switch (retval) {
+            for (String val : cars[i].split(("_"))) {
+                switch (val) {
                     case "C100":
                         rate_c100 += Double.parseDouble(cars[i].substring(7));
-                        //System.out.println("C100: "+(cars[i].substring(7)));
                         break;
-                    //System.out.println(cars[i].substring(7));
                     case "C200":
                         rate_c200 += Double.parseDouble((cars[i].substring(7)).substring(0, cars[i].substring(7).lastIndexOf("-")));
-                        //System.out.println("C200: "+(cars[i].substring(7)).substring(0,cars[i].substring(7).lastIndexOf("-")));
                         break;
                     case "C300":
-                        //System.out.println("C300: " +(cars[i].substring(7)).substring(0,cars[i].substring(7).lastIndexOf("-")));
                         rate_c300 += Double.parseDouble((cars[i].substring(7)).substring(0, cars[i].substring(7).lastIndexOf("-")));
                         break;
                     case "C400":
-                        //System.out.println("C400: " +(cars[i].substring(7)).substring(0,cars[i].substring(7).lastIndexOf("-")));
                         rate_c400 += Double.parseDouble((cars[i].substring(7)).substring(0, cars[i].substring(7).lastIndexOf("-")));
                         break;
                 }
             }
         }
 
-        //System.out.println("Стоимость расходов для легковых авто: " + rate_c100 * 12.5 * 46.10);
-        //System.out.println(rate_c100);
-        //  System.out.println(rate_c200);
-        ///  System.out.println(rate_c300);
-        //  System.out.println(rate_c400);
         double consumption100 = (rate_c100 / 100) * 46.20 * 12.5;
         double consumption200 = (rate_c200 / 100) * 48.90 * 12.0;
         double consumption300 = (rate_c300 / 100) * 47.50 * 11.5;
         double consumption400 = (rate_c400 / 100) * 48.90 * 20.0;
-
 
         System.out.println("Общая стоимость расходов на ГСМ");
         System.out.println(consumption100 + consumption200 + consumption300 + consumption400);
@@ -68,16 +54,27 @@ C
         System.out.println("Введите класс авто");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String code = reader.readLine();
-        if (code == "C100") {
+        if (code.equalsIgnoreCase("C100")) {
             System.out.println(consumption100);
-        } else if (code == "C200") {
+        } else if (code.equalsIgnoreCase("C200")) {
             System.out.println(consumption200);
-        } else if (code == "C300") {
+        } else if (code.equalsIgnoreCase("C300")) {
             System.out.println(consumption300);
-        } else if (code == "C400") {
+        } else if (code.equalsIgnoreCase("C400")) {
             System.out.println(consumption400);
         }
 
+        double max_consumption = Math.max(Math.max(consumption100, consumption200), Math.max(consumption300, consumption400));
+
+        if (max_consumption == consumption100) {
+            System.out.println("Легковые авто имеют наибольшую стоимость расходов");
+        } else if (max_consumption == consumption200) {
+            System.out.println("Грузовые авто имеют наибольшую стоимость расходов");
+        } else if (max_consumption == consumption300) {
+            System.out.println("Пассажирские авто имеют наибольшую стоимость расходов");
+        } else if (max_consumption == consumption400) {
+            System.out.println("Тяжелая техника имеет наибольшую стоимость расходов");
+        }
 
     }
 }
