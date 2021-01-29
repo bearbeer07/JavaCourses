@@ -2,7 +2,7 @@ package exercise_2;
 
 import java.util.ArrayList;
 
-public class exercise2_main {
+public class Exercise2_main {
     public static void main(String[] args) {
         //Задание 2
         //создание,генерация и передача массива
@@ -24,7 +24,7 @@ public class exercise2_main {
             ex2.remove_i(3);
             //Изменение случайного элемента
             ex2.set_i(2,4);
-            //Выыод всего массива
+            //Вывод всего массива
             ex2.show_arr();
             //Вывод максимального-минимального значения
             ex2.show_max_min();
