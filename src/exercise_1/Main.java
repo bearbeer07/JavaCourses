@@ -1,20 +1,15 @@
 package exercise_1;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
-/*
-Необходимо:
-
-реализовать функции которые в разрезе каждого типа авто выводят информацию о каждом авто (тип, номер, пробег, доп. параметр), с сортировкой по пробегу и доп параметру.
-*/ //C(CODE_CAR)_гос номер-Пробег-(доп. параметр)
-
     public static void main(String[] args) throws IOException {
-        String[] cars = {   "C100_1-100",   "C200_1-120-1200",  "C300_1-120-30", "C400_1-80-20",
-                            "C100_2-50",    "C200_2-40-1000",   "C300_2-200-45", "C400_2-10-20",
-                            "C100_3-10",    "C200_3-170-1100",  "C300_3-150-29", "C400_3-100-28",
-                            "C100_1-300",   "C200_1-100-750",   "C300_1-32-15"};
+        String[] cars = {"C100_1-100", "C200_1-120-1200", "C300_1-120-30", "C400_1-80-20",
+                "C100_2-50", "C200_2-40-1000", "C300_2-200-45", "C400_2-10-20",
+                "C100_3-10", "C200_3-170-1100", "C300_3-150-29", "C400_3-100-28",
+                "C100_1-300", "C200_1-100-750", "C300_1-32-15"};
 
         double rate_c100 = 0;
         double rate_c200 = 0;
@@ -78,42 +73,47 @@ public class Main {
                 for (String val : cars[i].split(("_"))) {
                     switch (val) {
                         case "C100":
-                            System.out.println("гос.номер: "+cars[i].substring(5).substring(0,cars[i].substring(5).lastIndexOf("-"))+
-                                               " пробег: "+cars[i].substring(7));
+                            System.out.println("гос.номер: " + cars[i].substring(5).substring(0, cars[i].substring(5).lastIndexOf("-")) +
+                                    " пробег: " + cars[i].substring(7));
 
                             break;
-                    }}}}
-
-        else if (code.equalsIgnoreCase("C200")){
-            for (int i = 0; i < cars_length; i++) {
-                for (String val : cars[i].split(("_")))
-                    switch (val) {
-                    case "C200":
-                System.out.println(("гос.номер: " + cars[i].substring(5).substring(0,1)+
-                                    " пробег: "+(cars[i].substring(7)).substring(0, cars[i].substring(7).lastIndexOf("-")))+
-                                    " доп. параметр: "+(cars[i].substring(7)).substring(cars[i].substring(6).lastIndexOf("-")));
-                break;
-            }}}
-        else if (code.equalsIgnoreCase("C300")){
+                    }
+                }
+            }
+        } else if (code.equalsIgnoreCase("C200")) {
             for (int i = 0; i < cars_length; i++) {
                 for (String val : cars[i].split(("_")))
                     switch (val) {
                         case "C200":
-                            System.out.println(("гос.номер: " + cars[i].substring(5).substring(0,1)+
-                                    " пробег: "+(cars[i].substring(7)).substring(0, cars[i].substring(7).lastIndexOf("-")))+
-                                    " доп. параметр: "+(cars[i].substring(7)).substring(cars[i].substring(6).lastIndexOf("-")));
+                            System.out.println(("гос.номер: " + cars[i].substring(5).substring(0, 1) +
+                                    " пробег: " + (cars[i].substring(7)).substring(0, cars[i].substring(7).lastIndexOf("-"))) +
+                                    " доп. параметр: " + (cars[i].substring(7)).substring(cars[i].substring(6).lastIndexOf("-")));
                             break;
-                    }}}
-        else if (code.equalsIgnoreCase("C400")){
+                    }
+            }
+        } else if (code.equalsIgnoreCase("C300")) {
             for (int i = 0; i < cars_length; i++) {
                 for (String val : cars[i].split(("_")))
                     switch (val) {
                         case "C200":
-                            System.out.println(("гос.номер: " + cars[i].substring(5).substring(0,1)+
-                                    " пробег: "+(cars[i].substring(7)).substring(0, cars[i].substring(7).lastIndexOf("-")))+
-                                    " доп. параметр: "+(cars[i].substring(7)).substring(cars[i].substring(6).lastIndexOf("-")));
+                            System.out.println(("гос.номер: " + cars[i].substring(5).substring(0, 1) +
+                                    " пробег: " + (cars[i].substring(7)).substring(0, cars[i].substring(7).lastIndexOf("-"))) +
+                                    " доп. параметр: " + (cars[i].substring(7)).substring(cars[i].substring(6).lastIndexOf("-")));
                             break;
-                    }}}
+                    }
+            }
+        } else if (code.equalsIgnoreCase("C400")) {
+            for (int i = 0; i < cars_length; i++) {
+                for (String val : cars[i].split(("_")))
+                    switch (val) {
+                        case "C200":
+                            System.out.println(("гос.номер: " + cars[i].substring(5).substring(0, 1) +
+                                    " пробег: " + (cars[i].substring(7)).substring(0, cars[i].substring(7).lastIndexOf("-"))) +
+                                    " доп. параметр: " + (cars[i].substring(7)).substring(cars[i].substring(6).lastIndexOf("-")));
+                            break;
+                    }
+            }
+        }
 
     }
-                    }
+}
