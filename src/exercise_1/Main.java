@@ -15,6 +15,7 @@ public class Main {
         double rate_c200 = 0;
         double rate_c300 = 0;
         double rate_c400 = 0;
+////////парсинг массива
         int cars_length = cars.length;
         for (int i = 0; i < cars_length; i++) {
             for (String val : cars[i].split(("_"))) {
