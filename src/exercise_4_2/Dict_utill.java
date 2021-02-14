@@ -4,9 +4,9 @@ public class Dict_utill {
     public void frequency(String text) {
         //переводим входной текст в нижний регистр
         text = text.toLowerCase();
-        //задаем массив с индексами всех букв алфавита
+        //задаем массив где будем хранить количество вхождений
         int[] result = new int['z' - 'a' + 1];
-        //перебираем входящую строку по буквам
+        //перебираем входящую строку по буквам и записываем количество вхождений
         for (int i = 0; i < text.length(); i++) {
             char ch = text.charAt(i);
             if (ch >= 'a' && ch <= 'z') {
