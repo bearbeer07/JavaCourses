@@ -3,7 +3,7 @@ package exercise_1;
 public class Cars_util {
 
 //так как было дублирование кода, вывод инфо по классу авто вынес в отдельный метод
-    public void output_info(String code, String arr[]) {
+    public static void output_info(String code, String arr[]) {
         if (code.equalsIgnoreCase("C100"))
         for (int i = 0; i < arr.length; i++) {
             for (String val : arr[i].split(("_"))) {
