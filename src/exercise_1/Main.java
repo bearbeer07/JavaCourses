@@ -19,7 +19,7 @@ public class Main  {
 ////////парсинг массива
         int cars_length = cars.length;
         for (int i = 0; i < cars_length; i++) {
-            for (String val : cars[i].split(("_"))) {
+            for (String val : cars[i].split("_")) {
                 switch (val) {
                     case "C100":
                         rate_c100 += Double.parseDouble(cars[i].substring(7));
